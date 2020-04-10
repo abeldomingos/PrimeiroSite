@@ -1,0 +1,118 @@
+<doctype html >
+    <html lang ="Pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Tudo sobre o Google Glass
+        </title>
+        <style>
+
+        </style>
+
+        <link rel="stylesheet"type="text/css" href="../_css/estilo.css"/>
+        <link rel="stylesheet"type="text/css" href="../_css/media.css"/>
+        <link rel="stylesheet"type="text/css" href="../_css/form.css"/>
+
+    </head>
+    <script language="javascript" src="../_javascript/funcoes.js"> </script>
+    <script>
+        function calco_Total() {
+          var qtd= parseInt(document.getElementById('cQua').value);
+          tot=qtd*1500;
+          document.getElementById('cPt').value=tot;
+        }
+    </script>
+    <body>
+    <div id ="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Google Glass</h1>
+                <h2><b>A revolução do Google está chegando</b> </h2>
+            </hgroup>
+
+            <img id="icone"src="../_imagens/contato.png">
+
+            <nav id="menu">
+                <h3> Menu Principal </h3>
+                <ol type="1" start="1">
+                    <li onmouseover="mudarFoto('../_imagens/home.png')" onmouseout="mudarFoto('../_imagens/contato.png')"><a href="index-txt.html">Home</a></li>
+                    <li onmouseover="mudarFoto('../_imagens/especificacoes.png')" onmouseout="mudarFoto('../_imagens/contato.png')"><a href="specs-txt.html">Especificações</a></li>
+                    <li onmouseover="mudarFoto('../_imagens/fotos.png')" onmouseout="mudarFoto('../_imagens/contato.png')"><a href="fotos-txt.html">Fotos</a></li>
+                    <li onmouseover="mudarFoto('../_imagens/multimidia.png')" onmouseout="mudarFoto('../_imagens/contato.png')"><a href="multimidia-txt.html">Multimídia</a></li>
+                    <ul type="square">
+                        <li>vídeos</li>
+                        <li>documentos</li>
+                    </ul>
+                    <li onmouseover="mudarFoto('../_imagens/contato.png')" onmouseout="mudarFoto('../_imagens/contato.png')"><a href="fale-conosco-txt.html">faleconosco</a></li>
+                </ol>
+            </nav>
+        </header>
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-section">
+                    <br/> <h2>Fale Conosco > Contato</h2>
+                    <br><h3>Formulário de Contato</h3>
+                    <h5>Por Evandro Armando</h5>
+                    <br><h6>Atualizado em 01/janeiro/2020</h6>
+                </header>
+            </article>
+
+            <form method="post" action="mailto:otalarmando@gmail.com"oninput="calco_Total();">
+                <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+                    <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" /></p>
+                    <p><label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="20" maxlength="20" placeholder="******"/></p>
+                    <p><label for="cMail">E-mail:</label> <input type=email name="tMail" id="cMail" size="20"  maxlength="20" placeholder="nome@gmail.com"/></p>
+                    <fieldset id="sexo"><legend>Sexo</legend>
+                        <p><label for="cMasc">Masculino</label><input type="radio" name="tMasc" id="cMasc"   >  </input></p>
+                        <p><label for="cFemi">Feminino </label><input type="radio" name="tMasc" id="cFemi" checked ></p>
+                    </fieldset>
+                    <p><label for="cData">Data de Nascimento:</label><input type="date" name="tData" id="cData" /></p>
+                </fieldset>
+
+                <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+                    <p><label for="cNumero">Número:</label><input type="number" min="0" max="9999" name="tNumero" id="cNumero" value="0" list="cCid" /></p>
+                    <p><label for="cProvincia">Provincia:</label>
+                        <select name="tProvincia" id="cProvincia">
+                            <optgroup label="Região Sul">
+                                <option value="LA">Luanda</option>
+                                <option value="CA">Cabinda</option>
+                            </optgroup>
+                            <optgroup label="Região Norte">
+                                <option  value="Cu" selected>Cunene</option>
+                                <option value="KD">Kuando Kubango</option>
+                            </optgroup >
+
+                    </select></p>
+
+                    <p><label for="tCid" >Cidade: </label><input type="text" name="tcCid" id="tCid" size="20" maxlength="20"  list="cidades"/>
+
+                    <datalist   id="cidades">
+                        <option value="Prenda"></option>
+                        <option value="Mainga"></option>
+
+                    </datalist> </p>
+
+
+                </fieldset>
+
+                <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+                   <p><label for="cUr">Grau de Urgência:</label> Min<input type="range"  min="0" max="10" step="2" name="tUr" id="cUr" />Max</p>
+                    <p><label for="cM">Mensagem:</label><textarea cols="30" rows="5" placeholder="Deixe a sua Mensagem" name="tM" id="cM"> </textarea></p>
+                </fieldset>
+                <fieldset id="pedido"><legend>Quero um Google Glass</legend>
+                    <p><label for="cAq">Gostaria de adquirir um Google Glass quando disponível</label><input type="checkbox" size="20" maxlength="30" name="tAq" id="cAq" checked /></p>
+                    <p><label for="cCor">Cor:</label><input type="color" name="tCor" id="cCor" /></p>
+                    <p><label for="cQua">Quantidade:</label><input type="number" min="0" max="5" name="tQua"  id="cQua"  value="0" /></p>
+                    <p><label for="cPt">Preço Total: Kz </label>
+                        <input type="text" name="tPt" id="cPt"  readonly placeholder="Valor a pagar" /></p>
+                </fieldset>
+                 <input  id="botao"type="image" src="../_imagens/botao-enviar.png">
+            </form>
+
+        <footer id="rodape">
+            <p>  Copyright &copy; 2019 -by Evandro Armmando &reg;
+                <a href="http://facebook.com" target="_blank"> Facebook </a>| Twitter</p>
+        </footer>
+    </div>
+    </body>
+    </html>
