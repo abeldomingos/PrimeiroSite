@@ -4,7 +4,7 @@
 	src: url("../_fonts/bubblegum-sans-regular.otf");
 }
 body {
-	color: black;
+	color:coral;
      background-color: dimgrey;
 	font-family: sans-serif;
 }
